@@ -20,8 +20,6 @@ router.get('/:id', async(req,res)=>{
     res.status(200).send(category);
 })
 
-
-
 router.post('/', async (req,res)=>{
     let category = new Category({
         name: req.body.name,
@@ -32,10 +30,8 @@ router.post('/', async (req,res)=>{
 
     if(!category)
     return res.status(400).send('the category cannot be created!')
-
     res.send(category);
 })
-
 
 router.put('/:id',async (req, res)=> {
     const category = await Category.findByIdAndUpdate(
@@ -50,7 +46,6 @@ router.put('/:id',async (req, res)=> {
 
     if(!category)
     return res.status(400).send('the category cannot be created!')
-
     res.send(category);
 })
 
