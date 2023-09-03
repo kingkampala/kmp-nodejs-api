@@ -6,11 +6,11 @@ function errorHandler(err, req, res, next) {
 
     if (err.name === 'ValidationError') {
         //  validation error
-        return res.status(401).json({message: err})
+        return res.status(401).json({message: "Validation Error"})
     }
 
     // default to 500 server error
-    return res.status(500).json(err);
+    return res.status(500).json({message: "Server Error"});
 }
 
 module.exports = errorHandler;
