@@ -1,10 +1,6 @@
 
-# NodeJs: E-Commerce Web API
-
-
-# Introduction
-Repo on E-Commerce Web API
-
+# E-Commerce Web API
+Node.js application built using the Express.js framework and MongoDB as the database system. It serves as the backend for an e-commerce platform, providing essential functionalities for categories, products, users, and orders.
 
 
 # Run
