@@ -63,10 +63,8 @@ router.post('/', async (req,res)=>{
 
     if(!order)
     return res.status(400).send('the order cannot be created!')
-
     res.send(order);
 })
-
 
 router.put('/:id',async (req, res)=> {
     const order = await Order.findByIdAndUpdate(
@@ -79,10 +77,8 @@ router.put('/:id',async (req, res)=> {
 
     if(!order)
     return res.status(400).send('the order cannot be update!')
-
     res.send(order);
 })
-
 
 router.delete('/:id', (req, res)=>{
     Order.findByIdAndRemove(req.params.id).then(async order =>{
@@ -107,7 +103,6 @@ router.get('/get/totalsales', async (req, res)=> {
     if(!totalSales) {
         return res.status(400).send('The order sales cannot be generated')
     }
-
     res.send({totalsales: totalSales.pop().totalsales})
 })
 
@@ -133,7 +128,5 @@ router.get(`/get/userorders/:userid`, async (req, res) =>{
     } 
     res.send(userOrderList);
 })
-
-
 
 module.exports = router;
