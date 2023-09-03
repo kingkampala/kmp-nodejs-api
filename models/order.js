@@ -58,10 +58,8 @@ orderSchema.set('toJSON', {
 exports.Order = mongoose.model('Order', orderSchema);
 
 
-
 /**
 Order Example:
-
 {
     "orderItems" : [
         {
@@ -81,5 +79,4 @@ Order Example:
     "phone": "+420702241333",
     "user": "5fd51bc7e39ba856244a3b44"
 }
-
  */
