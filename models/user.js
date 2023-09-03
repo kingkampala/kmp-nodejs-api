@@ -41,7 +41,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: ''
     }
-
 });
 
 userSchema.virtual('id').get(function () {
