@@ -39,7 +39,6 @@ router.post('/', async (req,res)=>{
 
     if(!user)
     return res.status(400).send('the user cannot be created!')
-
     res.send(user);
 })
 
@@ -72,7 +71,6 @@ router.put('/:id',async (req, res)=> {
 
     if(!user)
     return res.status(400).send('the user cannot be created!')
-
     res.send(user);
 })
 
@@ -92,15 +90,11 @@ router.post('/login', async (req,res) => {
             secret,
             {expiresIn : '1d'}
         )
-       
         res.status(200).send({user: user.email , token: token}) 
     } else {
        res.status(400).send('password is wrong!');
     }
-
-    
 })
-
 
 router.post('/register', async (req,res)=>{
     let user = new User({
@@ -119,10 +113,8 @@ router.post('/register', async (req,res)=>{
 
     if(!user)
     return res.status(400).send('the user cannot be created!')
-
     res.send(user);
 })
-
 
 router.delete('/:id', (req, res)=>{
     User.findByIdAndRemove(req.params.id).then(user =>{
@@ -146,6 +138,5 @@ router.get(`/get/count`, async (req, res) =>{
         userCount: userCount
     });
 })
-
 
 module.exports = router;
